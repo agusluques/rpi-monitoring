@@ -1,7 +1,7 @@
 services:
   grafana:
     container_name: monitoring-grafana
-    image: grafana/grafana:latest
+    image: grafana/grafana:11.3.0
     hostname: rpi-grafana
     restart: unless-stopped
     user: "472"
@@ -44,7 +44,7 @@ services:
 
   node-exporter:
     container_name: monitoring-node-exporter
-    image: prom/node-exporter:latest
+    image: prom/node-exporter:v1.8.2
     hostname: rpi-exporter
     restart: unless-stopped
     networks:
@@ -65,7 +65,7 @@ services:
 
   prometheus:
     container_name: monitoring-prometheus
-    image: prom/prometheus:latest
+    image: prom/prometheus:v2.55.0
     hostname: rpi-prometheus
     restart: unless-stopped
     user: "nobody"
